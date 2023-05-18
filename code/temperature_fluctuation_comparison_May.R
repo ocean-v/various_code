@@ -10,7 +10,7 @@ font_add_google("Roboto")
 
 
 # Loading data
-temp <- read_csv("data/data_May.csv", skip = 5, col_names = c("Date", "Temp", "Quality", "Equality"))
+temp <- read_csv("data/data.csv", skip = 5, col_names = c("Date", "Temp", "Quality", "Equality"))
 
 
 # Transforming data
@@ -20,7 +20,7 @@ temp2 <- temp %>%
     Year = as.character(year(Date)), 
     Day_Month = str_c(month(Date), "/", str_pad(day(Date), width = 2, pad = "0"))
   ) %>% 
-  filter(Day_Month != "5/19")
+  filter(Day_Month != "4/26")
 
 
 # Setting theme
@@ -69,7 +69,7 @@ g_dif <- ggplot(data = temp3) +
 # Combining plots
 g_temp_dif <- g_temp / g_dif + 
   plot_annotation(
-    title = "Comparison of temperature fluctuations in 5 days (5/14 to 5/18) \nover the past 50 years in Tokyo", 
+    title = "Comparison of temperature fluctuations in 5 days (4/21 to 4/25) \nover the past 50 years in Tokyo", 
     caption = "Hourly temperature data from Japan Meteorological Agency (https://www.data.jma.go.jp/gmd/risk/obsdl/index.php); @pat_macro", 
     theme = theme(
       plot.title = element_text(family = "Roboto", face = "bold", size = 20), 
@@ -79,4 +79,4 @@ g_temp_dif <- g_temp / g_dif +
 
 
 # Saving plot
-ggsave(g_temp_dif, file = "results/g_temp_dif_May.png", width = 24, height = 19, dpi = 300, unit = "cm")
+ggsave(g_temp_dif, file = "results/g_temp_dif.png", width = 24, height = 19, dpi = 300, unit = "cm")

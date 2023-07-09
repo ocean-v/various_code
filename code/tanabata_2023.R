@@ -12,7 +12,7 @@ showtext_auto()
 
 
 # Loading data
-tanabata_hiroshige <- stack("C://Users/kotaro/Documents/新しいフォルダー (2)/Shichūhan'ei_tanabata_matsuri_LOC_16325961983.jpg")
+tanabata_hiroshige <- stack("Shichūhan'ei_tanabata_matsuri_LOC_16325961983.jpg")
 
 
 # Preparing data
